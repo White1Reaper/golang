@@ -1,13 +1,12 @@
 package main
 
 import (
-	"https://github.com/White1Reaper/golang/blob/main/packages/mutex"
-	"https://github.com/White1Reaper/golang/blob/main/packages/channel"
-	"https://github.com/White1Reaper/golang/blob/main/packages/atomic"
+	"./packages"
+
 )
 
 func main() {
-	mutex.Mutex()
-	channel.Channel()
-	atomic.Atomic()
+	packages.Mutex()
+	packages.Channel()
+	packages.Atomic()
 }
