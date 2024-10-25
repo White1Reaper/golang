@@ -1,12 +1,13 @@
 package main
 
 import (
-	"./packages"
-
+	m "packages/mutex"
+	c "packages/channel"
+	a "packages/atomic"
 )
 
 func main() {
-	packages.Mutex()
-	packages.Channel()
-	packages.Atomic()
+	m.Mutex()
+	c.Channel()
+	a.Atomic()
 }
