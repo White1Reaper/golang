@@ -58,6 +58,6 @@ func BenchmarkAtomic(b *testing.B) {
 
 func main() {
 mutex()
-channel()
-Atomic()
+//channel()
+//Atomic()
 }
