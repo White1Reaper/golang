@@ -1,13 +1,12 @@
 package main
-
 import (
-	m "packages/mutex"
-	c "packages/channel"
-	a "packages/atomic"
+    m "golang/packages/mutex"
+    c "golang/packages/channel"
+    a "golang/packages/atomic"
 )
-
 func main() {
-	m.Mutex()
-	c.Channel()
-	a.Atomic()
+    m.Mutex()
+    c.Channel()
+    a.Atomic()
 }
+
