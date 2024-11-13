@@ -1,6 +1,6 @@
 package main
 import (
-	"fmt"
+	//"fmt"
 	"sync"
 	"sync/atomic"
 	"testing"
@@ -11,7 +11,7 @@ func mutex() {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		fmt.Println("hello world")
+		//fmt.Println("hello world")
 	}()
 	wg.Wait()
 }
@@ -21,12 +21,13 @@ func channel() {
 		ch <- "hello world"
 		close(ch)
 	}()
-	fmt.Println(<-ch)
+	<-ch
+	//fmt.Println(<-ch)
 }
 func Atomic() {
 	var done int32 = 0
 	go func() {
-		fmt.Println("hello world")
+		//fmt.Println("hello world")
 		atomic.StoreInt32(&done, 1)
 	}()
 	for atomic.LoadInt32(&done) == 0 {

@@ -4,9 +4,17 @@ import (
     "net/http"
     "github.com/go-chi/chi/v5"
 )
-type Mes struct {
+type User struct {
     Text string `json:"text"`
 }
+
+// GET /users
+// POST /users {'name':"fdfsd"}
+// DELETE /users/fdfsd
+
+// 7. - implement using http package
+// 9 - implement using go-chi middleware
+
 func Hello(w http.ResponseWriter, r *http.Request) {
     m := Mes{Text: "hello world"}
     w.Header().Set("Content-Type", "application/json")
