@@ -34,11 +34,13 @@ var indexHTML = `
    
     border-radius: 5px;
     }
+    *{
     
+    margin-top:30px;
+    }
     button{    
     font-size: 18px;
 border: 2px solid black;
-    margitn-top:30px;
 
    border-radius: 5px;
    background:black;   
