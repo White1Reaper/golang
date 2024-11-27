@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`localhost`)"
+      - "traefik.http.services.app.loadbalancer.server.port=8080"
+    networks:
+      - web
+
+  traefik:
+    image: traefik:v2.6
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:8081"
+    ports:
+      - "8081:8081"    # redirection
+      - "8080:8080"    #dashboard
+    networks:
+      - web
+
+networks:
+  web:
+
